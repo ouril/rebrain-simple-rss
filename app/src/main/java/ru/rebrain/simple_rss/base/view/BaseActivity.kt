@@ -1,4 +1,4 @@
-package ru.rebrain.simple_rss.base
+package ru.rebrain.simple_rss.base.view
 
 import android.os.Bundle
 import androidx.annotation.LayoutRes
