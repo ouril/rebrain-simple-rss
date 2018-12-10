@@ -1,4 +1,4 @@
-package ru.rebrain.simple_rss.base.di
+package ru.rebrain.simple_rss.base.di.app
 
 import android.app.Application
 import dagger.Component
