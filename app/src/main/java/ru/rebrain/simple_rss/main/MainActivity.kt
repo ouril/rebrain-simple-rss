@@ -1,7 +1,6 @@
 package ru.rebrain.simple_rss.main
 
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_main.*
 import ru.rebrain.simple_rss.R
 import ru.rebrain.simple_rss.base.di.activity.ActivityComponent
 import ru.rebrain.simple_rss.base.view.BaseActivity
@@ -22,9 +21,9 @@ class MainActivity : BaseActivity(), MainContract.View {
         presenter.attach(this)
         presenter.loadHelloText()
 
-        hello_tv.setOnClickListener {
+        /*hello_tv.setOnClickListener {
             presenter.loadHelloText()
-        }
+        }*/
     }
 
     override fun onDestroy() {
@@ -33,6 +32,6 @@ class MainActivity : BaseActivity(), MainContract.View {
     }
 
     override fun onTextLoaded(text: String) {
-        hello_tv.text = text
+        //hello_tv.text = text
     }
 }
