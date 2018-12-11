@@ -5,7 +5,7 @@ import dagger.Component
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import ru.rebrain.simple_rss.base.di.network.NetworkModule
-import ru.rebrain.simple_rss.base.di.network.RssService
+import ru.rebrain.simple_rss.rss.network.RssService
 import javax.inject.Singleton
 
 @Singleton

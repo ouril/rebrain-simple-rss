@@ -26,6 +26,7 @@ dependencies {
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0-alpha01'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
+    implementation 'com.google.android.material:material:1.0.0'
 
     implementation "com.google.dagger:dagger:2.19"
     kapt "com.google.dagger:dagger-compiler:2.19"
@@ -35,6 +36,8 @@ dependencies {
     implementation "com.github.faruktoptas:RetrofitRssConverterFactory:0.1.0"
 
     implementation "com.google.code.gson:gson:2.8.5"
+
+    implementation "com.squareup.picasso:picasso:2.71828"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1-alpha01'

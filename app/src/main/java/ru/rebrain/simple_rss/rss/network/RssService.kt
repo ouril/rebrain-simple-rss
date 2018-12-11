@@ -1,4 +1,4 @@
-package ru.rebrain.simple_rss.base.di.network
+package ru.rebrain.simple_rss.rss.network
 
 import me.toptas.rssconverter.RssFeed
 import retrofit2.Call

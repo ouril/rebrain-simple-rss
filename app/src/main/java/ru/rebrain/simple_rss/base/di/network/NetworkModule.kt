@@ -6,6 +6,7 @@ import me.toptas.rssconverter.RssConverterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
+import ru.rebrain.simple_rss.rss.network.RssService
 import javax.inject.Singleton
 
 @Module

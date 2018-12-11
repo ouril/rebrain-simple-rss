@@ -1,9 +1,14 @@
 package ru.rebrain.simple_rss.main
 
 import android.os.Bundle
+import com.google.android.material.tabs.TabLayout
+import kotlinx.android.synthetic.main.activity_main.*
 import ru.rebrain.simple_rss.R
 import ru.rebrain.simple_rss.base.di.activity.ActivityComponent
 import ru.rebrain.simple_rss.base.view.BaseActivity
+import ru.rebrain.simple_rss.model.Feed
+import ru.rebrain.simple_rss.rss.view.RssFragment
+import ru.rebrain.simple_rss.rss.view.RssFragmentAdapter
 import javax.inject.Inject
 
 class MainActivity : BaseActivity(), MainContract.View {
@@ -18,12 +23,12 @@ class MainActivity : BaseActivity(), MainContract.View {
     }
 
     override fun init(state: Bundle?) {
-        presenter.attach(this)
-        presenter.loadHelloText()
+        setSupportActionBar(toolbar)
+        tab_layout.setupWithViewPager(view_pager)
+        tab_layout.tabMode = TabLayout.MODE_SCROLLABLE
 
-        /*hello_tv.setOnClickListener {
-            presenter.loadHelloText()
-        }*/
+        presenter.attach(this)
+        presenter.loadRssFragments()
     }
 
     override fun onDestroy() {
@@ -31,7 +36,15 @@ class MainActivity : BaseActivity(), MainContract.View {
         presenter.detach()
     }
 
-    override fun onTextLoaded(text: String) {
-        //hello_tv.text = text
+    override fun onLoadRssFragments(feeds: List<Feed>) {
+        val fragmentList = ArrayList<RssFragment>()
+        val titles = ArrayList<String>()
+        for (feed in feeds) {
+            fragmentList.add(RssFragment.newInstance(feed))
+            titles.add(feed.title)
+        }
+
+        val adapter = RssFragmentAdapter(supportFragmentManager, fragmentList, titles)
+        view_pager.adapter = adapter
     }
 }

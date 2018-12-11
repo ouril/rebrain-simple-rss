@@ -2,14 +2,16 @@ package ru.rebrain.simple_rss.main
 
 import ru.rebrain.simple_rss.base.presenter.BasePresenterInterface
 import ru.rebrain.simple_rss.base.view.BaseViewInterface
+import ru.rebrain.simple_rss.model.Feed
 
 interface MainContract {
 
-    interface Presenter : BasePresenterInterface<MainContract.View> {
-        fun loadHelloText()
+    interface Presenter : BasePresenterInterface<View> {
+        fun loadRssFragments()
+
     }
 
     interface View : BaseViewInterface {
-        fun onTextLoaded(text: String)
+        fun onLoadRssFragments(feeds: List<Feed>)
     }
 }
